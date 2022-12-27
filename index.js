@@ -1,14 +1,18 @@
 const express = require('express');
+const bodyParser = require('body-parser');
 const app = express();
 const port = 8000;
 const router = require('./routes/index')
 const db = require('./config/mongoose');
 const ToDoList = require('./models/models'); //refer this ToDoList for operations
+
+app.use(bodyParser.urlencoded({extended: false}));
 //use express router
 app.use('/', router);
 
 //enables static files accessible to the project
 app.use(express.static("assets"));
+
 
 //setup the template engine
 app.set('view engine', 'ejs');

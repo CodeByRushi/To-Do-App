@@ -7,5 +7,6 @@ const controller = require('../controllers/index.js');
 const router = express.Router();
 
 router.get('/', controller.home);
-
+router.post('/add', controller.create_todo);
+router.get('/delete', controller.delete_todo);
 module.exports = router;

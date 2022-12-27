@@ -18,6 +18,6 @@ const toDO_Schema = new mongoose.Schema({
 });
 
 //giving name to the collection as "Contact" as well as providing its schema.
-const Contact = mongoose.model('todoList', toDO_Schema);
+const todoList = mongoose.model('todoList', toDO_Schema);
 
-module.exports = Contact;
+module.exports = todoList;

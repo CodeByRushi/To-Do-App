@@ -3,7 +3,7 @@
 const mongoose = require('mongoose');
 
 //connect to the database (i.e connecting ODM to mongo)
-mongoose.connect('mongodb://localhost/toDo_List_db');
+mongoose.connect('mongodb://localhost/toDo_ListDemo_db');
 
 //acquire the connection (to check if it is successfull.)
 const db = mongoose.connection;
