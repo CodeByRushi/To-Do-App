@@ -189,10 +189,14 @@ input[type="textarea"]::placeholder {
     background-color: brown;
     color: white;
 }
+.dispdsc{
+    position: relative;
+    left:10%;
+}
 .displayContainer{
     position: relative;
     left:25%;
-    text-align: center;
+    /* text-align: center; */
     width: 50%;
 }
 input.delechack{
