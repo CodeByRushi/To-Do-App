@@ -28,12 +28,7 @@
                         <i class="fa fa-plus-square" > </i> Add Task
                     </button>
                 
-                    <!-- <a href="/deleteData"> -->
-                        <!-- <button class="buttonDesign colorRed" id="deleteButton" type="submit" name="action" value="Delete"
-                        formaction="delete">
-                            <i class="fa fa-trash-o"></i> Delete Task
-                        </button> -->
-                    <!-- </a> -->
+
                     <br><br>
             
                 </form>
@@ -52,7 +47,7 @@
                             <%= i.category %>
                         </div>
                             <div class="editClass">
-                                <a href="/editdata/?id=<%=i._id %>">Edit</a>
+                                <a href="/update/?id=<%=i._id %>">Edit</a>
                                 <a href="/delete/?id=<%=i._id%>"">
                                     <i class="fa-solid fa-trash-can"></i>
                                 </a>

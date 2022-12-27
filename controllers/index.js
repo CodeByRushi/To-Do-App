@@ -1,3 +1,4 @@
+const { render } = require('ejs');
 const todoList = require('../models/models.js'); //refer this ToDoList for operations
 module.exports.home = function(req,res){
 
@@ -53,4 +54,32 @@ module.exports.delete_todo = function(req,res){
     });
     
     // res.redirect("back");
+}
+
+module.exports.updateForm = function(req,res){
+    console.log(req.query.id);
+    todoList.findById(req.query.id, function(err,todoLists){
+        if(err){ console.log('hi man!! it an error'); return}
+        return res.render('editPage',{
+        title:'Edit Page',
+        todolist:todoLists
+        });
+    });
+}
+
+module.exports.updateToDoList = function(req,res){
+  
+    todoList.updateOne({_id:req.query.id},{$set:{
+        desc:req.body.desc,
+        category:req.body.category,
+        dueDate:req.body.dueDate
+    }} ,function(err,todoData){
+        if(err){
+            console.log('erroe while updating'); 
+            return;
+        }
+        // console.log("Details Updated", todoData);
+        return res.redirect('/');
+    });
+    
 }
